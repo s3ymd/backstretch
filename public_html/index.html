@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>backstretchサンプル</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .main {
+                background-color: white;
+                filter: alpha(opacity=75);
+                -moz-opacity:0.75;
+                opacity:0.75;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            秋葉原駅　昭和通り口
+            <h1>ワインのお店 ビストロ・アキハバラ</h1>
+            <a href="tel:0300000000">ご予約お電話番号: 03-0000-0000</a>
+        </div>
+
+
+        <script src="js/libs/jquery/jquery.min.js"></script>
+        <script src="js/libs/jquery-backstretch/jquery.backstretch.min.js"></script>
+        <script>
+
+            // 画像の配列
+            var images = [
+                "china.jpg",
+                "stake.jpg",
+                "shabushabu.jpg",
+                "sushi.jpg"
+            ];
+
+            // 画像をプリロード（事前読み込み）する
+            $(images).each(function() {
+                $('<img/>')[0].src = this;
+            });
+
+            // バックストレッチライブラリ起動
+            $.backstretch(images, {duration: 5000, fade: 750});
+
+        </script>        
+
+    </body>
+</html>
